@@ -1,0 +1,325 @@
+{
+  "curriculumName": "Argentina Blockchain Education Curriculum",
+  "description": "Based on the official blockchain curriculum introduced in Buenos Aires high schools, in collaboration with ETH Kipu Foundation",
+  "version": "1.0.0",
+  "targetAudience": "High school students (ages 16-18) and adult learners (18+)",
+  "duration": "Full academic year",
+  "courses": [
+    {
+      "id": "blockchain-fundamentals",
+      "title": "Introduction to Blockchain Technology",
+      "description": "Cover the fundamentals of blockchain, including its history, key concepts, and various applications",
+      "duration": "8 weeks",
+      "level": "Beginner",
+      "modules": [
+        {
+          "moduleNumber": 1,
+          "title": "What is Blockchain?",
+          "topics": [
+            "History of blockchain technology",
+            "Key concepts: blocks, chains, consensus",
+            "Distributed ledger technology",
+            "Cryptography basics"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 2,
+          "title": "Blockchain Applications",
+          "topics": [
+            "Cryptocurrencies",
+            "Smart contracts",
+            "Decentralized applications (DApps)",
+            "Use cases across industries"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 3,
+          "title": "Blockchain Architecture",
+          "topics": [
+            "Network structure",
+            "Mining and consensus mechanisms",
+            "Public vs private blockchains",
+            "Blockchain security"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 4,
+          "title": "Assessment and Project",
+          "topics": [
+            "Final assessment",
+            "Blockchain use case analysis project"
+          ],
+          "duration": "2 weeks"
+        }
+      ],
+      "learningOutcomes": [
+        "Understand the fundamental concepts of blockchain technology",
+        "Identify different types of blockchain networks",
+        "Explain how blockchain ensures security and immutability",
+        "Analyze real-world blockchain applications"
+      ]
+    },
+    {
+      "id": "ethereum-platform",
+      "title": "Ethereum Platform Overview",
+      "description": "Provide an in-depth look at Ethereum's architecture, smart contracts, and its role in the blockchain ecosystem",
+      "duration": "10 weeks",
+      "level": "Intermediate",
+      "prerequisites": ["blockchain-fundamentals"],
+      "modules": [
+        {
+          "moduleNumber": 1,
+          "title": "Ethereum Architecture",
+          "topics": [
+            "Ethereum Virtual Machine (EVM)",
+            "Ethereum accounts and addresses",
+            "Gas and transaction fees",
+            "Ethereum network structure"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 2,
+          "title": "Smart Contracts",
+          "topics": [
+            "What are smart contracts?",
+            "Smart contract lifecycle",
+            "Deploying smart contracts",
+            "Interacting with smart contracts"
+          ],
+          "duration": "3 weeks"
+        },
+        {
+          "moduleNumber": 3,
+          "title": "Ethereum Ecosystem",
+          "topics": [
+            "Ethereum 2.0 and upgrades",
+            "Layer 2 solutions",
+            "DeFi (Decentralized Finance)",
+            "NFTs and token standards (ERC-20, ERC-721)"
+          ],
+          "duration": "3 weeks"
+        },
+        {
+          "moduleNumber": 4,
+          "title": "Assessment and Project",
+          "topics": [
+            "Final assessment",
+            "Ethereum ecosystem analysis project"
+          ],
+          "duration": "2 weeks"
+        }
+      ],
+      "learningOutcomes": [
+        "Understand Ethereum's architecture and components",
+        "Explain how smart contracts work",
+        "Navigate the Ethereum ecosystem",
+        "Identify and analyze Ethereum-based applications"
+      ]
+    },
+    {
+      "id": "solidity-programming",
+      "title": "Solidity Programming",
+      "description": "Hands-on training in Solidity to enable students to develop and deploy their own DApps on the Ethereum platform",
+      "duration": "12 weeks",
+      "level": "Intermediate to Advanced",
+      "prerequisites": ["blockchain-fundamentals", "ethereum-platform"],
+      "modules": [
+        {
+          "moduleNumber": 1,
+          "title": "Solidity Basics",
+          "topics": [
+            "Solidity syntax and structure",
+            "Data types and variables",
+            "Functions and modifiers",
+            "Control structures"
+          ],
+          "duration": "3 weeks"
+        },
+        {
+          "moduleNumber": 2,
+          "title": "Advanced Solidity",
+          "topics": [
+            "Inheritance and interfaces",
+            "Libraries and imports",
+            "Events and logging",
+            "Error handling"
+          ],
+          "duration": "3 weeks"
+        },
+        {
+          "moduleNumber": 3,
+          "title": "Smart Contract Development",
+          "topics": [
+            "Writing secure smart contracts",
+            "Testing smart contracts",
+            "Deployment strategies",
+            "Interacting with contracts"
+          ],
+          "duration": "3 weeks"
+        },
+        {
+          "moduleNumber": 4,
+          "title": "DApp Development",
+          "topics": [
+            "Building a complete DApp",
+            "Frontend integration (Web3.js, Ethers.js)",
+            "Wallet integration",
+            "Project deployment"
+          ],
+          "duration": "3 weeks"
+        }
+      ],
+      "learningOutcomes": [
+        "Write Solidity smart contracts",
+        "Test and deploy smart contracts",
+        "Build complete decentralized applications",
+        "Integrate DApps with Web3 wallets"
+      ],
+      "practicalProjects": [
+        "Simple token contract",
+        "Voting system",
+        "Marketplace DApp",
+        "Final capstone project"
+      ]
+    },
+    {
+      "id": "blockchain-internships",
+      "title": "Blockchain Internships and Practical Projects",
+      "description": "Professional internships focused on blockchain projects, providing students with hands-on experience with real-world applications",
+      "duration": "16 weeks",
+      "level": "Advanced",
+      "prerequisites": ["blockchain-fundamentals", "ethereum-platform", "solidity-programming"],
+      "format": "Internship/Project-based",
+      "modules": [
+        {
+          "moduleNumber": 1,
+          "title": "Internship Preparation",
+          "topics": [
+            "Resume and portfolio building",
+            "Interview preparation",
+            "Finding blockchain opportunities",
+            "Setting internship goals"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 2,
+          "title": "Internship Period",
+          "topics": [
+            "Real-world blockchain project work",
+            "Mentorship and guidance",
+            "Industry best practices",
+            "Collaboration and teamwork"
+          ],
+          "duration": "12 weeks"
+        },
+        {
+          "moduleNumber": 3,
+          "title": "Project Presentation",
+          "topics": [
+            "Project documentation",
+            "Presentation skills",
+            "Portfolio development",
+            "Reflection and learning"
+          ],
+          "duration": "2 weeks"
+        }
+      ],
+      "learningOutcomes": [
+        "Apply blockchain knowledge in real-world scenarios",
+        "Work collaboratively on blockchain projects",
+        "Build a professional portfolio",
+        "Gain industry experience and connections"
+      ]
+    },
+    {
+      "id": "ethics-legal",
+      "title": "Ethical and Legal Considerations",
+      "description": "Discuss the ethical implications and legal aspects of blockchain technology to ensure responsible use",
+      "duration": "6 weeks",
+      "level": "All Levels",
+      "modules": [
+        {
+          "moduleNumber": 1,
+          "title": "Blockchain Ethics",
+          "topics": [
+            "Decentralization and power",
+            "Privacy and transparency",
+            "Environmental impact",
+            "Social responsibility"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 2,
+          "title": "Legal Framework",
+          "topics": [
+            "Regulatory landscape",
+            "Compliance requirements",
+            "Intellectual property",
+            "International perspectives"
+          ],
+          "duration": "2 weeks"
+        },
+        {
+          "moduleNumber": 3,
+          "title": "Responsible Development",
+          "topics": [
+            "Security best practices",
+            "Risk management",
+            "Code of conduct",
+            "Case studies"
+          ],
+          "duration": "2 weeks"
+        }
+      ],
+      "learningOutcomes": [
+        "Understand ethical implications of blockchain",
+        "Navigate legal and regulatory requirements",
+        "Develop responsibly and securely",
+        "Make informed decisions about blockchain applications"
+      ]
+    }
+  ],
+  "assessmentMethods": [
+    "Quizzes and tests",
+    "Practical coding assignments",
+    "Project-based assessments",
+    "Peer reviews",
+    "Internship evaluations",
+    "Final capstone projects"
+  ],
+  "resources": [
+    "Official Ethereum documentation",
+    "Solidity documentation",
+    "ETH Kipu Foundation materials",
+    "Interactive coding environments",
+    "Video lectures and tutorials",
+    "Community forums and discussions"
+  ],
+  "certification": {
+    "available": true,
+    "requirements": [
+      "Complete all course modules",
+      "Pass all assessments with 70% or higher",
+      "Complete internship or capstone project",
+      "Submit portfolio of work"
+    ],
+    "issuer": "Open Circle Educational Platform"
+  },
+  "teacherTraining": {
+    "description": "30 educators undergo hybrid training program focused on Ethereum and blockchain technology",
+    "duration": "8 weeks",
+    "topics": [
+      "Blockchain fundamentals for educators",
+      "Teaching methodologies",
+      "Hands-on practice",
+      "Curriculum delivery strategies"
+    ]
+  }
+}
+
