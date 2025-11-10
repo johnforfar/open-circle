@@ -27,7 +27,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "Courses", href: "/courses" },
     { label: "Contributors", href: "/contributors" },
-    { label: "Community", href: "#community" },
+    { label: "Community", href: "/community" },
     { label: "About", href: "#about" },
   ];
 
@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-semibold tracking-tight">
               <span className={isInvert ? "text-black dark:text-white" : "text-white"}>
-                Open Circle
+                OpenX Academy
               </span>
             </Link>
           </div>
@@ -72,33 +72,36 @@ export default function Navbar() {
             </ul>
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden xl:flex items-center gap-4">
-            <WalletConnectButton />
+          {/* Right side: Wallet Button + Mobile Menu */}
+          <div className="flex items-center gap-4">
+            {/* Wallet Button - Prominent, always visible */}
+            <div className="relative">
+              <WalletConnectButton />
+            </div>
+            
+            {/* Mobile menu button */}
+            <button
+              className="xl:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 cursor-pointer"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              <span
+                className={`block w-6 h-0.5 transition-all duration-300 ${
+                  isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 transition-all duration-300 ${
+                  isMobileMenuOpen ? "opacity-0" : ""
+                } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 transition-all duration-300 ${
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
+              ></span>
+            </button>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="xl:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 cursor-pointer"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${
-                isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-              } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
-            ></span>
-            <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${
-                isMobileMenuOpen ? "opacity-0" : ""
-              } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
-            ></span>
-            <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${
-                isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-              } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
-            ></span>
-          </button>
         </div>
       </div>
 

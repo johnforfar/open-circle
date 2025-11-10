@@ -311,7 +311,7 @@ export const curriculumData = {
       "Complete internship or capstone project",
       "Submit portfolio of work"
     ],
-    issuer: "Open Circle Educational Platform"
+    issuer: "OpenX Academy"
   },
   teacherTraining: {
     description: "30 educators undergo hybrid training program focused on Ethereum and blockchain technology",

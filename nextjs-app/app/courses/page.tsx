@@ -1,7 +1,9 @@
 import React from "react";
+import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { curriculumData } from "@/templates/courses/openxai-openmesh-curriculum";
+import { Award, ExternalLink, ArrowRight } from "lucide-react";
 
 export default function CoursesPage() {
   return (
@@ -11,14 +13,29 @@ export default function CoursesPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium bg-gray-100 dark:bg-gray-900 mb-6">
-            <span className="text-gray-900 dark:text-white">Curriculum</span>
+            <span className="text-gray-900 dark:text-white">Innovative Learning</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">
-            Web3 & Decentralized AI Courses
+            Learn by Building on OpenR&D
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4 max-w-3xl mx-auto">
-            Master OpenxAI & Openmesh technologies
+            Master OpenxAI & Openmesh technologies. Earn onchain certificates on Polygon. Build real projects. Get real rewards.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <span className="px-4 py-2 text-sm font-semibold rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+              <Award className="w-4 h-4 inline mr-2" />
+              Onchain Certificates
+            </span>
+            <a
+              href="https://openrd.openmesh.network"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              OpenR&D Integration
+            </a>
+          </div>
         </div>
 
         {/* Courses List */}
@@ -100,6 +117,17 @@ export default function CoursesPage() {
                   </span>
                 </div>
               )}
+
+              {/* CTA */}
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+                <Link
+                  href={`/courses/${course.id}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                >
+                  <span>View Course Details</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>

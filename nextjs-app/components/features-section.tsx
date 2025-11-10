@@ -31,8 +31,8 @@ const features = [
   },
   {
     icon: Zap,
-    title: "Leaderboard & Rewards",
-    description: "Compete. Earn $OPEN tokens. Unlock access.",
+    title: "Onchain Everything",
+    description: "Certificates, progress, and rewards on Polygon. Fully verifiable.",
   },
 ];
 
@@ -43,13 +43,13 @@ export default function FeaturesSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium bg-gray-100 dark:bg-gray-900 mb-6">
-            <span className="text-gray-900 dark:text-white">Features</span>
+            <span className="text-gray-900 dark:text-white">Innovation</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 dark:text-white mb-4">
-            Everything You Need
+            Learn by Building
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            From beginner to expert in Web3 & Decentralized AI
+            Onchain certificates, live projects, and real rewards. The most innovative Web3 education platform.
           </p>
         </div>
 

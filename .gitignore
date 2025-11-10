@@ -18,3 +18,8 @@ result-*
 .DS_Store
 Thumbs.db
 
+# Cloned repositories (submodules)
+openrd/
+landing-page/
+xnode-nextjs-template/
+

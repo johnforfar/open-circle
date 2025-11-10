@@ -617,7 +617,7 @@ export const curriculumData = {
       "Contribute to OpenxAI or Openmesh ecosystem",
       "Submit professional portfolio"
     ],
-    issuer: "Open Circle Educational Platform"
+    issuer: "OpenX Academy"
   },
   teacherTraining: {
     description: "Comprehensive training program for educators to teach Web3, decentralized AI, and blockchain technologies",

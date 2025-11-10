@@ -29,10 +29,10 @@ export default function Footer() {
           {/* Logo */}
           <div className="sm:col-span-1">
             <Link href="/" className="text-2xl font-bold mb-4 block">
-              Open Circle
+              OpenX Academy
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Web3 Educational Platform
+              Innovative Web3 Education
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-gray-500 dark:text-gray-500 text-sm">
-            © {new Date().getFullYear()} Open Circle. All rights reserved.
+            © {new Date().getFullYear()} OpenX Academy. All rights reserved.
           </p>
         </div>
       </div>

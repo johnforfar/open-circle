@@ -29,6 +29,8 @@ const communityLinks = [
   },
 ];
 
+import Link from "next/link";
+
 export default function CommunitySection() {
   return (
     <section id="community" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900">
@@ -42,48 +44,15 @@ export default function CommunitySection() {
             <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 dark:text-white mb-4">
               Join Our Community
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
               Connect, learn, and build Web3 together
             </p>
-          </div>
-
-          {/* Community Links */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {communityLinks.map((link, index) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="group border border-gray-200 dark:border-gray-800 rounded-xl px-8 py-10 bg-white dark:bg-gray-900 hover:shadow-lg transition-all duration-300 hover:border-blue-500 dark:hover:border-blue-500"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
-                      <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                      {link.name}
-                    </h3>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">500+</div>
-              <div className="text-gray-600 dark:text-gray-400">Active Learners</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">50+</div>
-              <div className="text-gray-600 dark:text-gray-400">Courses Available</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">1000+</div>
-              <div className="text-gray-600 dark:text-gray-400">Community Members</div>
-            </div>
+            <Link
+              href="/community"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <span>Join Community</span>
+            </Link>
           </div>
         </div>
       </div>

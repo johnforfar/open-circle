@@ -1,5 +1,5 @@
 export const contributorLevels = {
-  title: "Open Circle Contributor Ecosystem",
+  title: "OpenX Academy Contributor Ecosystem",
   subtitle: "Distributed innovation & scalable engineering",
   description: "A comprehensive A-Z solution for beginners to learn, connect, build, grow, network, and influence. More than just career progression, networking, increasing productivity, and growing Web3 as a whole.",
   
@@ -20,7 +20,7 @@ export const contributorLevels = {
       level: 1,
       title: "Contributor",
       tagline: "Initiate, Learn, Connect",
-      summary: "The starting point for individuals new to the Open Circle Academy. These beginners are often recent university graduates or those transitioning from web2 careers to web3, looking to kickstart their careers in the web3 industry.",
+      summary: "The starting point for individuals new to the OpenX Academy. These beginners are often recent university graduates or those transitioning from web2 careers to web3, looking to kickstart their careers in the web3 industry.",
       
       persona: [
         "Recently graduated or still studying",
@@ -29,7 +29,7 @@ export const contributorLevels = {
       ],
       
       highlights: [
-        "Open Circle Academy courses available",
+        "OpenX Academy courses available",
         "Users sign up to take courses on the academy",
         "Limited signups per period to maintain quality and exclusivity"
       ],
@@ -44,7 +44,7 @@ export const contributorLevels = {
         educate: [
           "What is Openmesh? Big picture: Data+Infra+People = Web3",
           "What can Openmesh give them? Network of like-minded people and experts, resources to gain Web3 skills, resources to build with in a decentralized and distributed manner",
-          "Familiarity with Open Circle Academy and OpenR&D platforms",
+          "Familiarity with OpenX Academy and OpenR&D platforms",
           "Clear path ahead of how to progress in the Openmesh ecosystem, and therefore progress in Web3"
         ],
         belongingness: [
@@ -88,10 +88,10 @@ export const contributorLevels = {
       level: 2,
       title: "Verified Contributor",
       tagline: "Graduates, Gaining Skills",
-      summary: "Individuals who have successfully completed the Open Circle Academy course and have been accepted as a Verified Contributor after submitting a successful dummy project.",
+      summary: "Individuals who have successfully completed the OpenX Academy course and have been accepted as a Verified Contributor after submitting a successful dummy project.",
       
       persona: [
-        "Graduates of the Open Circle Academy who have successfully completed the course",
+        "Graduates of the OpenX Academy who have successfully completed the course",
         "Been accepted as a Verified Contributor after submitting a successful dummy project",
         "Individuals looking to apply their knowledge in practical settings and earn income",
         "Aspiring freelancers and remote workers in the web3 space"

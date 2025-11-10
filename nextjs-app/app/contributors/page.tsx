@@ -111,8 +111,8 @@ export default function ContributorsPage() {
             <div className="text-sm text-gray-600 dark:text-gray-400">Certificates</div>
           </div>
           <div className="text-center p-6 border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-gray-900">
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">$OPEN</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Rewards</div>
+            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">$OPENX</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Token Rewards</div>
           </div>
           <div className="text-center p-6 border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-gray-900">
             <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">DAO</div>

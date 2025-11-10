@@ -1,6 +1,6 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Open Circle",
-  description: "Web3 Educational Platform - Courses, Community, and Decentralized AI Training",
+  name: "OpenX Academy",
+  description: "Innovative Web3 Education - Onchain certificates, live projects, and real rewards",
 } as const
