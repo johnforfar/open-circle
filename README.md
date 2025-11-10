@@ -9,11 +9,13 @@ Innovative Web3 Education Platform - Onchain certificates, live projects, and re
 Create `.env.local` in `nextjs-app/`:
 
 ```bash
-NEXT_PUBLIC_REOWN_PROJECT_ID=7e1b35c4e28938e616af208cea516588
+NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
 NEXT_PUBLIC_NETWORK=testnet
 NEXT_PUBLIC_OPENRD_TASKS_CONTRACT=0xDdb23dacd41908C4eAE03982B1c6529252A56b62
 NEXT_PUBLIC_OPENRD_NETWORK=sepolia
 ```
+
+**Note:** Get your Reown project ID from [Reown Cloud](https://cloud.reown.com/).
 
 ### Commands (in root folder)
 
