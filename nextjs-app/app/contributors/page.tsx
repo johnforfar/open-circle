@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Footer from "@/components/academy/Footer";
 import { contributorLevels } from "@/templates/contributors/contributor-levels";
 import { ArrowRight, Award, Users, Zap, Crown } from "lucide-react";
 

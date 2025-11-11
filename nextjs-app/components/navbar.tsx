@@ -6,7 +6,6 @@ import { WalletConnectButton } from "@/components/wallet-connect-button";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isInvert, setIsInvert] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -16,7 +15,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      setIsInvert(window.scrollY > 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,42 +26,33 @@ export default function Navbar() {
     { label: "Courses", href: "/courses" },
     { label: "Contributors", href: "/contributors" },
     { label: "Community", href: "/community" },
-    { label: "About", href: "#about" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
-        isScrolled ? "bg-white/10 backdrop-blur-xl dark:bg-black/10" : "bg-transparent"
+        isScrolled ? "bg-white shadow-sm" : "bg-white"
       }`}
     >
       <div className="container mx-auto relative">
-        <div className="flex items-center justify-between m-4">
+        <div className="flex items-center justify-between px-6 py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-semibold tracking-tight">
-              <span className={isInvert ? "text-black dark:text-white" : "text-white"}>
-                OpenX Academy
+            <Link href="/" className="text-2xl font-bold tracking-tight">
+              <span className="text-gray-900">
+                OpenX<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">.academy</span>
               </span>
             </Link>
           </div>
 
           {/* Desktop navigation */}
           <div className="hidden xl:block absolute left-1/2 transform -translate-x-1/2">
-            <ul
-              className={`flex items-center justify-center gap-8 font-normal text-[13px] ${
-                isInvert ? "text-black dark:text-white" : "text-white"
-              }`}
-            >
+            <ul className="flex items-center justify-center gap-8 font-medium text-sm text-gray-700">
               {navLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className={`transition-colors duration-200 ${
-                      isInvert
-                        ? "hover:text-black/60 dark:hover:text-white/60"
-                        : "hover:text-white/60"
-                    }`}
+                    className="transition-colors duration-200 hover:text-gray-900"
                   >
                     {item.label}
                   </Link>
@@ -88,17 +77,17 @@ export default function Navbar() {
               <span
                 className={`block w-6 h-0.5 transition-all duration-300 ${
                   isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
+                } bg-gray-900`}
               ></span>
               <span
                 className={`block w-6 h-0.5 transition-all duration-300 ${
                   isMobileMenuOpen ? "opacity-0" : ""
-                } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
+                } bg-gray-900`}
               ></span>
               <span
                 className={`block w-6 h-0.5 transition-all duration-300 ${
                   isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                } ${isInvert ? "bg-black dark:bg-white" : "bg-white"}`}
+                } bg-gray-900`}
               ></span>
             </button>
           </div>
@@ -107,7 +96,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`xl:hidden absolute top-full left-0 right-0 bg-white/10 backdrop-blur-xl dark:bg-black/10 overflow-hidden z-50 ${
+        className={`xl:hidden absolute top-full left-0 right-0 bg-white shadow-lg overflow-hidden z-50 ${
           isMobileMenuOpen ? "max-h-[450px] opacity-100" : "max-h-0 opacity-0"
         } transition-all duration-300`}
       >
@@ -117,7 +106,7 @@ export default function Navbar() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="block py-2 font-medium transition-colors duration-200 text-black dark:text-white hover:text-black/70 dark:hover:text-white/70"
+                  className="block py-2 font-medium transition-colors duration-200 text-gray-700 hover:text-gray-900"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -133,4 +122,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

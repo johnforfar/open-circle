@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Footer from "@/components/academy/Footer";
 import CourseProgressClient from "@/components/course-progress-client";
 import { curriculumData } from "@/templates/courses/openxai-openmesh-curriculum";
 import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
