@@ -1,9 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/academy/Footer";
 import CourseProgressClient from "@/components/course-progress-client";
 import { curriculumData } from "@/templates/courses/openxai-openmesh-curriculum";
-import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Award, ExternalLink, CheckCircle2, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 interface CourseDetailPageProps {

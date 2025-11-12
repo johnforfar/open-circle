@@ -82,3 +82,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Minimal styling for wallet connect button to match "Start Learning Free" button */
+.wallet-connect-button {
+  --w3m-accent: rgb(59, 130, 246);
+  --w3m-background-color: rgb(59, 130, 246);
+}
+
+.wallet-connect-button appkit-button {
+  height: auto;
+  min-height: 2.5rem;
+}
