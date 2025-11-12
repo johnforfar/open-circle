@@ -13,7 +13,7 @@ const WalletConnectButtonInner = dynamic(
       return (
         <button
           onClick={() => open()}
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-10 py-7 text-lg font-bold shadow-2xl transition-all hover:scale-105 active:scale-95"
+          className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-10 rounded-xl px-10 py-7 text-lg font-bold shadow-2xl transition-all hover:scale-105 active:scale-95"
           style={{
             background: 'linear-gradient(to right, rgb(59, 130, 246), rgb(147, 51, 234))',
             color: 'white',
@@ -28,7 +28,7 @@ const WalletConnectButtonInner = dynamic(
     ssr: false,
     loading: () => (
       <button
-        className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-10 py-7 text-lg font-bold shadow-2xl transition-all hover:scale-105 active:scale-95"
+        className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-10 rounded-xl px-10 py-7 text-lg font-bold shadow-2xl transition-all hover:scale-105 active:scale-95"
         style={{
           background: 'linear-gradient(to right, rgb(59, 130, 246), rgb(147, 51, 234))',
           color: 'white',
