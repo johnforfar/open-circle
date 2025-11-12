@@ -26,7 +26,7 @@ export default function CTABanner() {
                 Ready to start your Web3 journey?
               </h2>
               <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
-                Join 12,500+ students learning, earning, and building the decentralized future.
+                Join 6k+ students learning, earning, and building the decentralized future.
                 Start with a free course today.
               </p>
               <Button

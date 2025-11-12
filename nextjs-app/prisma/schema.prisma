@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(uuid())
+  address     String   @unique
+  avatarName  String?
+  avatarImage String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  courseProgress CourseProgress[]
+  certificates   Certificate[]
+
+  @@index([address])
+  @@map("users")
+}
+
+model Course {
+  id           String   @id @default(uuid())
+  courseId     String   @unique
+  title        String
+  description  String?
+  duration     String?
+  level        String?
+  totalModules Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  progress CourseProgress[]
+
+  @@index([courseId])
+  @@map("courses")
+}
+
+model CourseProgress {
+  id                String   @id @default(uuid())
+  userId            String
+  courseId          String
+  completedModules  Int       @default(0)
+  completedModuleIds String[]
+  progressPercentage Float   @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId])
+  @@index([courseId])
+  @@map("course_progress")
+}
+
+model Certificate {
+  id          String   @id @default(uuid())
+  userId      String
+  courseId    String
+  tokenId     String?  @unique
+  metadataUri String?
+  claimedAt   DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId])
+  @@index([courseId])
+  @@index([tokenId])
+  @@map("certificates")
+}
+

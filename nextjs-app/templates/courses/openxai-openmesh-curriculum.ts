@@ -6,12 +6,88 @@ export const curriculumData = {
   duration: "Full academic year",
   courses: [
     {
+      id: "getting-started-web3",
+      title: "Getting Started with Web3",
+      description: "Learn how to create and use a Web3 wallet with Reown, Base, Binance, MetaMask, and more. No wallet needed to start - complete the course, then connect your account to save progress and claim your NFT certificate.",
+      duration: "20 min",
+      level: "Beginner",
+      prerequisites: undefined,
+      modules: [
+        {
+          moduleNumber: 1,
+          title: "What is a Web3 Wallet?",
+          topics: [
+            "Understanding Web3 wallets",
+            "Why you need a wallet",
+            "Types of wallets (custodial vs non-custodial)",
+            "Security basics and best practices"
+          ],
+          duration: "5 min"
+        },
+        {
+          moduleNumber: 2,
+          title: "Creating a Wallet with Reown",
+          topics: [
+            "What is Reown (formerly WalletConnect)",
+            "Social login options (Google, email, etc.)",
+            "Automatic wallet creation",
+            "Connecting to dApps"
+          ],
+          duration: "5 min"
+        },
+        {
+          moduleNumber: 3,
+          title: "Creating Wallets: Base, Binance, MetaMask",
+          topics: [
+            "Base Wallet - Coinbase's official wallet",
+            "Binance Wallet - Multi-chain support",
+            "MetaMask - Most popular browser extension",
+            "Comparing wallet features"
+          ],
+          duration: "7 min"
+        },
+        {
+          moduleNumber: 4,
+          title: "Your First Transactions",
+          topics: [
+            "Receiving tokens",
+            "Sending tokens",
+            "Understanding gas fees",
+            "Connecting wallet to dApps"
+          ],
+          duration: "5 min"
+        },
+        {
+          moduleNumber: 5,
+          title: "Quiz: Web3 Wallet Basics",
+          topics: [
+            "Security quiz",
+            "Wallet comparison knowledge",
+            "Transaction understanding",
+            "Best practices check"
+          ],
+          duration: "5 min"
+        }
+      ],
+      learningOutcomes: [
+        "Understand different Web3 wallet options",
+        "Create a wallet using Reown, Base, Binance, or MetaMask",
+        "Understand wallet security best practices",
+        "Perform basic transactions and connect to dApps"
+      ],
+      practicalProjects: [
+        "Create a Web3 wallet (your choice)",
+        "Complete your first transaction",
+        "Connect wallet to OpenX Academy and claim NFT"
+      ]
+    },
+    {
       id: "blockchain-fundamentals",
       title: "Blockchain & Web3 Fundamentals",
       description: "Master the core concepts of blockchain technology, decentralization, and Web3 ecosystems",
       duration: "8 weeks",
       level: "Beginner",
-      prerequisites: undefined,
+      prerequisites: ["getting-started-web3"],
       modules: [
         {
           moduleNumber: 1,

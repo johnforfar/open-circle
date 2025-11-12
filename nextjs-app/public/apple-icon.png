@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <link href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6911c388f34d7c304d4bb290/72de371bd_OpenXAI-102.png" rel="icon" type="image/svg+xml"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Openx Academy | Learn, Earn, and Build Your Future
+  </title>
+  <script crossorigin="" src="/assets/index-M6l6v09A.js" type="module">
+  </script>
+  <link crossorigin="" href="/assets/index-B667sSUy.css" rel="stylesheet"/>
+  <script src="/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js" type="module">
+  </script>
+ </head>
+ <body>
+  <div id="root">
+  </div>
+ </body>
+</html>

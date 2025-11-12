@@ -4,11 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "48+", label: "Free Courses" },
-  { value: "150+", label: "Jobs Available" },
-  { value: "$2M+", label: "Rewards Distributed" },
-  { value: "12,500+", label: "Active Students" },
-] as const;
+  { value: "10+", label: "Free Courses", subtitle: "From basics to advanced" },
+  { value: "20+", label: "Available Jobs", subtitle: "In Web3 & AI" },
+  { value: "$25k+", label: "Rewards Distributed", subtitle: "To our community" },
+  { value: "6k+", label: "Active Students", subtitle: "Learning daily" },
+];
 
 export default function StatsSection() {
   return (
@@ -27,9 +27,14 @@ export default function StatsSection() {
               <div className="mb-2 text-3xl font-semibold text-gray-900 md:text-4xl">
                 {stat.value}
               </div>
-              <div className="text-sm font-normal text-gray-600 md:text-base">
+              <div className="text-sm font-normal text-gray-600 md:text-base mb-1">
                 {stat.label}
               </div>
+              {stat.subtitle && (
+                <div className="text-xs text-gray-500 md:text-sm">
+                  {stat.subtitle}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

@@ -6,9 +6,11 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WalletConnectButton } from "@/components/wallet-connect-button";
 import { useRouter } from "next/navigation";
+import { useAccount } from "wagmi";
 
 export default function HeroSection() {
   const router = useRouter();
+  const { isConnected } = useAccount();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -111,10 +113,10 @@ export default function HeroSection() {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     size="lg"
-                    onClick={() => router.push("/courses")}
+                    onClick={() => router.push(isConnected ? "/courses" : "/courses/getting-started-web3/learn")}
                     className="group px-10 py-7 rounded-xl bg-white text-black font-bold text-lg shadow-2xl transition-all hover:bg-gray-100"
                   >
-                    Start Learning Free
+                    {isConnected ? "Explore Courses" : "Start Learning Free"}
                     <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </motion.div>

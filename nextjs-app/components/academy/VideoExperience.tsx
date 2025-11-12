@@ -68,13 +68,16 @@ export default function VideoExperience() {
           className="grid md:grid-cols-3 gap-8 mt-16"
         >
           {[
-            { stat: "12,500+", label: "Active Students" },
-            { stat: "8,200+", label: "NFTs Earned" },
-            { stat: "24h", label: "Avg. First Reward" }
+            { stat: "6k+", label: "Active Students", subtitle: undefined },
+            { stat: "455+", label: "OpenR&D Contributors", subtitle: "Unique accounts" },
+            { stat: "$2.5k+", label: "Project Values", subtitle: "Total rewards" }
           ].map((item, i) => (
             <div key={i} className="text-center">
               <div className="text-4xl font-bold text-gray-900 mb-2">{item.stat}</div>
               <div className="text-gray-600 font-medium">{item.label}</div>
+              {item.subtitle && (
+                <div className="text-sm text-gray-500 mt-1">{item.subtitle}</div>
+              )}
             </div>
           ))}
         </motion.div>

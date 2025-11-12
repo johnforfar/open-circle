@@ -73,7 +73,7 @@ export default function AboutSection() {
                 "On-chain certificates that prove your skills",
                 "Earn OPENX tokens while you learn",
                 "Direct access to real Web3 projects",
-                "Join a global community of 12,500+ builders"
+                "Join a global community of 6k+ builders"
               ].map((item, i) => (
                 <motion.div
                   key={i}

@@ -136,6 +136,16 @@ export default async function CourseDetailPage({ params }: CourseDetailPageProps
                 </div>
               </div>
             )}
+
+            <div className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900">
+              <Link
+                href={`/courses/${course.id}/learn`}
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors w-full justify-center"
+              >
+                <span>Start Learning</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           <div className="space-y-6">

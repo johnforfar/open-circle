@@ -9,6 +9,19 @@ import { Button } from "@/components/ui/button";
 
 const courses = [
   {
+    title: "Getting Started with Web3",
+    instructor: "OpenX Academy",
+    duration: "20 min",
+    students: "15.2K",
+    rating: 5.0,
+    reviews: 3200,
+    price: "Free",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&q=80",
+    level: "Beginner",
+    category: "Blockchain",
+    href: "/courses/getting-started-web3"
+  },
+  {
     title: "Blockchain Fundamentals",
     instructor: "Dr. Sarah Chen",
     duration: "45 min",
@@ -143,7 +156,7 @@ export default function CourseCatalog() {
               transition={{ delay: index * 0.05 }}
               className="group cursor-pointer"
             >
-              <Link href="/courses">
+              <Link href={course.href || "/courses"}>
                 <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-200 hover:shadow-lg">
                   {/* Course Image */}
                   <div className="relative aspect-video overflow-hidden bg-gray-100">

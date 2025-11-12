@@ -33,7 +33,7 @@ export default function CommunitySection() {
               {[
                 {
                   icon: Users,
-                  title: "12,500+ Contributors",
+                  title: "3000+ Contributors",
                   description: "Join learners from 85+ countries building the decentralized future together"
                 },
                 {
