@@ -19,6 +19,7 @@ result-*
 Thumbs.db
 
 # Cloned repositories (submodules)
+REFERENCES/
 openrd/
 landing-page/
 xnode-nextjs-template/
