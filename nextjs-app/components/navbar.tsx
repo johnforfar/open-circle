@@ -37,10 +37,25 @@ export default function Navbar() {
       <div className="container mx-auto relative">
         <div className="flex items-center justify-between px-6 py-4">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold tracking-tight">
-              <span className="text-gray-900">
-                OpenX<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">.academy</span>
+          <div className="flex items-center gap-3">
+            <Link 
+              href="https://openxai.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 transition-opacity hover:opacity-80"
+            >
+              <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6911c388f34d7c304d4bb290/cc481c4ea_OpenXAI-111.png"
+                alt="OpenXAI"
+                className="w-8 h-8"
+              />
+            </Link>
+            <Link href="/" className="flex items-end gap-1 text-black" style={{ fontFamily: "Inter, sans-serif" }}>
+              <span className="text-[20px] font-semibold leading-none">
+                OpenxAI
+              </span>
+              <span className="text-[14px] font-light leading-none">
+                Academy
               </span>
             </Link>
           </div>

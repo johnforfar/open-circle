@@ -27,8 +27,8 @@ export default function HeroSection() {
       onMouseMove={handleMouseMove}
     >
       <div className="max-w-[1400px] mx-auto px-6 py-6">
-        <div className="grid grid-cols-3 items-center">
-          <div className="flex justify-start">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
             <a
               href="https://openxai.org"
               target="_blank"
@@ -41,10 +41,8 @@ export default function HeroSection() {
                 className="w-8 h-8"
               />
             </a>
-          </div>
-
-          <div className="flex justify-center">
-            <div
+            <a 
+              href="/"
               className="flex items-end gap-1 text-black"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
@@ -54,7 +52,7 @@ export default function HeroSection() {
               <span className="text-[14px] font-light leading-none">
                 Academy
               </span>
-            </div>
+            </a>
           </div>
 
           <div className="flex justify-end">
