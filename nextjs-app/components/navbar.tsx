@@ -26,6 +26,7 @@ export default function Navbar() {
     { label: "Courses", href: "/courses" },
     { label: "Contributors", href: "/contributors" },
     { label: "Community", href: "/community" },
+    { label: "Forums", href: "/forums" },
   ];
 
   return (

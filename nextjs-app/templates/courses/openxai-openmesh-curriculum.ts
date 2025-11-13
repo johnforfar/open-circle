@@ -22,7 +22,46 @@ export const curriculumData = {
             "Types of wallets (custodial vs non-custodial)",
             "Security basics and best practices"
           ],
-          duration: "5 min"
+          duration: "5 min",
+          contentSections: [
+            {
+              heading: "Wallets are your account in Web3",
+              body: "Unlike Web2 apps, there is no username/password combo stored on a company server. A wallet generates a pair of cryptographic keys. Your <strong>public address</strong> is how you receive tokens and sign in to decentralized apps. Your <strong>private key or seed phrase</strong> proves ownership, so anyone who has it can move your assets.",
+              callout: "Think of the wallet as both your login and your bank account for decentralized apps."
+            },
+            {
+              heading: "Custodial vs non-custodial (quick guide)",
+              bullets: [
+                "<strong>Custodial wallets</strong> (exchanges, some mobile apps) manage keys for you. They feel familiar but you rely on the provider.",
+                "<strong>Non-custodial wallets</strong> (Reown, MetaMask, Base Wallet, Binance Web3 Wallet) give you full control. You keep the keys, so you control the funds.",
+                "You can start with custodial for speed and graduate to non-custodial when you’re ready to self-custody."
+              ],
+              body: "We recommend starting non-custodial so you can collect on-chain achievements, earn rewards, and participate fully in the OpenxAI ecosystem."
+            },
+            {
+              heading: "Security checklist before you create a wallet",
+              bullets: [
+                "Write down your seed phrase on paper — never store it in screenshots or cloud notes.",
+                "Enable biometric unlock or a strong passcode on your device.",
+                "Bookmark official links so you don’t fall for phishing sites.",
+                "Plan where you will back up recovery info (e.g., hardware wallet, password manager)."
+              ],
+              body: "Following these basics keeps you safe when you start experimenting with Base, Binance, or any other chain."
+            },
+            {
+              heading: "Further learning",
+              resources: [
+                { label: "Reown: What is a wallet?", url: "https://docs.reown.com/appkit/introduction/wallets" },
+                { label: "MetaMask: Learn crypto wallets", url: "https://support.metamask.io/hc/en-us/articles/360015489531-What-is-a-crypto-wallet" },
+                { label: "Base Wallet overview", url: "https://www.coinbase.com/wallet" },
+                { label: "Binance Web3 Wallet guide", url: "https://www.bnbchain.org/en/blog/how-to-use-binance-web3-wallet" }
+              ]
+            },
+            {
+              heading: "Already have a wallet?",
+              body: "Great! You can still follow along to review security, then skip ahead to connect your wallet in Module 4 and explore advanced configuration tips."
+            }
+          ]
         },
         {
           moduleNumber: 2,
@@ -33,7 +72,34 @@ export const curriculumData = {
             "Automatic wallet creation",
             "Connecting to dApps"
           ],
-          duration: "5 min"
+          duration: "5 min",
+          contentSections: [
+            {
+              heading: "Reown gives you a wallet in seconds",
+              body: "Reown (WalletConnect AppKit) creates a non-custodial wallet with optional social logins. You can sign in with Google or email, but you still end up with your own seed phrase — the best of both worlds."
+            },
+            {
+              heading: "Steps to create your Reown wallet",
+              bullets: [
+                "Click <strong>Connect Wallet</strong> in the top-right of OpenxAI Academy.",
+                "Choose <strong>Continue with Google</strong> or <strong>Email</strong> if you prefer a web2-style onboarding, or pick a wallet app you already use.",
+                "Complete the prompts — Reown will generate a wallet and show you how to secure the recovery phrase.",
+                "Finish by approving the signature request; you now have a reusable wallet you can use across any WalletConnect-enabled dApp."
+              ],
+              body: "Reown runs on your device, so no one (including us) can access your private keys."
+            },
+            {
+              heading: "Save your recovery phrase",
+              body: "After onboarding, Reown provides a seed phrase. Pause and write it down in a secure place. You can always re-import this seed into MetaMask, Base Wallet, or a hardware wallet later."
+            },
+            {
+              heading: "Resources",
+              resources: [
+                { label: "Reown AppKit quickstart", url: "https://docs.reown.com/appkit/react/quick-start" },
+                { label: "WalletConnect security best practices", url: "https://docs.reown.com/appkit/security/best-practices" }
+              ]
+            }
+          ]
         },
         {
           moduleNumber: 3,
@@ -44,7 +110,52 @@ export const curriculumData = {
             "MetaMask - Most popular browser extension",
             "Comparing wallet features"
           ],
-          duration: "7 min"
+          duration: "7 min",
+          contentSections: [
+            {
+              heading: "Choose your main wallet",
+              body: "Use any of these popular wallets to access the same on-chain identity. You can import the Reown seed phrase into each wallet if you want multiple interfaces."
+            },
+            {
+              heading: "Base Wallet (Coinbase Wallet)",
+              bullets: [
+                "Mobile-first wallet with deep Base network support.",
+                "Supports username-style handles and fiat on-ramps.",
+                "Great for users who already use Coinbase products."
+              ],
+              resources: [
+                { label: "Coinbase Wallet setup guide", url: "https://help.coinbase.com/en/wallet/managing-your-wallet/account-management/how-to-set-up-a-new-wallet" },
+                { label: "Base network primer", url: "https://base.mirror.xyz" }
+              ]
+            },
+            {
+              heading: "Binance Web3 Wallet",
+              bullets: [
+                "Browses multiple chains (BNB Smart Chain, Ethereum, Base).",
+                "Integrated with Binance exchange for easy funding.",
+                "Offered inside the Binance mobile app — toggle to Web3 Wallet."
+              ],
+              resources: [
+                { label: "Binance Web3 Wallet tutorial", url: "https://www.bnbchain.org/en/blog/how-to-use-binance-web3-wallet" }
+              ]
+            },
+            {
+              heading: "MetaMask",
+              bullets: [
+                "Browser extension + mobile app trusted by millions.",
+                "Works with any EVM chain by adding custom RPCs.",
+                "Offers hardware wallet integrations (Ledger, Trezor)."
+              ],
+              resources: [
+                { label: "Install MetaMask extension", url: "https://metamask.io/download/" },
+                { label: "MetaMask security checklist", url: "https://support.metamask.io/hc/en-us/articles/360015488751-Security-tips-for-MetaMask" }
+              ]
+            },
+            {
+              heading: "Already have one of these?",
+              body: "Perfect. Import your existing wallet into Reown via WalletConnect, or continue using your preferred wallet — the Academy recognizes any WalletConnect-compatible option."
+            }
+          ]
         },
         {
           moduleNumber: 4,
@@ -55,7 +166,38 @@ export const curriculumData = {
             "Understanding gas fees",
             "Connecting wallet to dApps"
           ],
-          duration: "5 min"
+          duration: "5 min",
+          contentSections: [
+            {
+              heading: "Connect to OpenxAI Academy",
+              body: "Use the <strong>Connect Wallet</strong> button at the top of this page. Approve the prompt in your wallet app. Once connected, your address appears in the header and your progress can be saved."
+            },
+            {
+              heading: "Receive your first tokens",
+              bullets: [
+                "Share your public wallet address (it starts with 0x...) to receive test tokens or rewards.",
+                "For Base, request Base Sepolia ETH from the official faucet.",
+                "For Binance Smart Chain, request test BNB from the BNB Chain faucet."
+              ],
+              resources: [
+                { label: "Base Sepolia faucet", url: "https://bridge.base.org/deposit" },
+                { label: "BNB Chain testnet faucet", url: "https://www.bnbchain.org/en/testnet-faucet" }
+              ]
+            },
+            {
+              heading: "Send a transaction safely",
+              bullets: [
+                "Double-check the recipient address.",
+                "Review gas fees; low-fee networks like Base are usually under $0.10.",
+                "Start with small amounts until you’re confident."
+              ],
+              body: "Every transaction will prompt a confirmation in your wallet. Read the details before approving."
+            },
+            {
+              heading: "Track what happened",
+              body: "Use block explorers like BaseScan or BscScan to confirm your transaction settled. Copy your wallet address into the search bar to see balances and NFTs."
+            }
+          ]
         },
         {
           moduleNumber: 5,
@@ -66,7 +208,29 @@ export const curriculumData = {
             "Transaction understanding",
             "Best practices check"
           ],
-          duration: "5 min"
+          duration: "5 min",
+          contentSections: [
+            {
+              heading: "Before you quiz",
+              bullets: [
+                "Review the differences between custodial and non-custodial wallets.",
+                "Know where you saved your seed phrase.",
+                "Practice a connect/disconnect flow in at least one wallet."
+              ],
+              body: "The quiz locks in the key ideas that keep you (and your future rewards) safe."
+            },
+            {
+              heading: "Next steps after the quiz",
+              bullets: [
+                "Connect your wallet to claim your progress badge.",
+                "Join the OpenxAI community forums to share your wallet setup.",
+                "Explore the <strong>Base Blockchain Development</strong> course to keep building momentum."
+              ],
+              resources: [
+                { label: "OpenxAI Community forums", url: "https://community.openxai.org" }
+              ]
+            }
+          ]
         }
       ],
       learningOutcomes: [

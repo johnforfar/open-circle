@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { WalletConnectButton } from "@/components/wallet-connect-button";
 import { useRouter } from "next/navigation";
 import { useAccount } from "wagmi";
 
@@ -26,41 +25,6 @@ export default function HeroSection() {
       className="relative bg-white overflow-visible"
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-[1400px] mx-auto px-6 py-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <a
-              href="https://openxai.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 transition-opacity hover:opacity-80"
-            >
-              <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6911c388f34d7c304d4bb290/cc481c4ea_OpenXAI-111.png"
-                alt="OpenXAI"
-                className="w-8 h-8"
-              />
-            </a>
-            <a 
-              href="/"
-              className="flex items-end gap-1 text-black"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              <span className="text-[20px] font-semibold leading-none">
-                OpenxAI
-              </span>
-              <span className="text-[14px] font-light leading-none">
-                Academy
-              </span>
-            </a>
-          </div>
-
-          <div className="flex justify-end">
-            <WalletConnectButton />
-          </div>
-        </div>
-      </div>
-
       <div
         className="max-w-[1400px] mx-auto relative rounded-3xl overflow-hidden bg-black px-6 pb-16"
         style={{ minHeight: "600px" }}

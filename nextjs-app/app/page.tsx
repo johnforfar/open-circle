@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Navbar from "@/components/navbar";
 import HeroSection from "@/components/academy/HeroSection";
 import StatsSection from "@/components/academy/StatsSection";
 import FirstStepPreview from "@/components/academy/FirstStepPreview";
@@ -16,16 +17,19 @@ import Footer from "@/components/academy/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
-      <HeroSection />
-      <StatsSection />
-      <FirstStepPreview />
-      <JourneySection />
-      <CommunitySection />
-      <RewardsSection />
-      <CourseCatalog />
-      <VideoExperience />
-      <TestimonialsSection />
-      <CTABanner />
+      <Navbar />
+      <main className="pt-24">
+        <HeroSection />
+        <StatsSection />
+        <FirstStepPreview />
+        <JourneySection />
+        <CommunitySection />
+        <RewardsSection />
+        <CourseCatalog />
+        <VideoExperience />
+        <TestimonialsSection />
+        <CTABanner />
+      </main>
       <Footer />
     </div>
   );

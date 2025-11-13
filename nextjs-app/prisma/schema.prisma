@@ -12,13 +12,19 @@ model User {
   address     String   @unique
   avatarName  String?
   avatarImage String?
+  email       String?  @unique // Optional email for notifications
+  bio         String?  @db.Text
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   courseProgress CourseProgress[]
   certificates   Certificate[]
+  forumPosts     ForumPost[]
+  forumReplies   ForumReply[]
+  forumReactions ForumReaction[]
 
   @@index([address])
+  @@index([email])
   @@map("users")
 }
 
@@ -30,13 +36,36 @@ model Course {
   duration     String?
   level        String?
   totalModules Int      @default(0)
+  prerequisites String[] @default([])
+  learningOutcomes String[] @default([])
+  practicalProjects String[] @default([])
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  progress CourseProgress[]
+  modules      Module[]
+  progress     CourseProgress[]
+  certificates Certificate[]
+  forumPosts   ForumPost[]
 
   @@index([courseId])
   @@map("courses")
+}
+
+model Module {
+  id            String   @id @default(uuid())
+  courseId      String
+  moduleNumber  Int
+  title         String
+  duration      String?
+  topics        String[] @default([])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  course        Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([courseId, moduleNumber])
+  @@index([courseId])
+  @@map("modules")
 }
 
 model CourseProgress {
@@ -64,16 +93,111 @@ model Certificate {
   courseId    String
   tokenId     String?  @unique
   metadataUri String?
+  contractAddress String? // NFT contract address
+  network     String?  // e.g., "polygon", "base"
+  transactionHash String? // Transaction hash for minting
   claimedAt   DateTime @default(now())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
   @@unique([userId, courseId])
   @@index([userId])
   @@index([courseId])
   @@index([tokenId])
   @@map("certificates")
+}
+
+// Forum Categories (e.g., "General Discussion", "Course Help", "Projects")
+model Forum {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  slug        String   @unique
+  icon        String?  // Icon/emoji for the forum
+  order       Int      @default(0) // Display order
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  posts       ForumPost[]
+
+  @@index([slug])
+  @@index([isActive])
+  @@map("forums")
+}
+
+// Forum Posts/Threads
+model ForumPost {
+  id          String   @id @default(uuid())
+  forumId     String
+  userId      String
+  courseId    String?  // Optional: link to a course
+  title       String
+  content     String   @db.Text
+  isPinned    Boolean  @default(false)
+  isLocked    Boolean  @default(false)
+  viewCount   Int      @default(0)
+  replyCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  forum       Forum        @relation(fields: [forumId], references: [id], onDelete: Cascade)
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course      Course?      @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  replies     ForumReply[]
+  reactions   ForumReaction[]
+
+  @@index([forumId])
+  @@index([userId])
+  @@index([courseId])
+  @@index([isPinned, createdAt])
+  @@index([createdAt])
+  @@map("forum_posts")
+}
+
+// Replies to Forum Posts
+model ForumReply {
+  id          String   @id @default(uuid())
+  postId      String
+  userId      String
+  content     String   @db.Text
+  replyToId   String?  // For nested replies
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  post        ForumPost      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  replyTo     ForumReply?    @relation("ReplyToReply", fields: [replyToId], references: [id], onDelete: SetNull)
+  replies     ForumReply[]   @relation("ReplyToReply")
+  reactions   ForumReaction[]
+
+  @@index([postId])
+  @@index([userId])
+  @@index([replyToId])
+  @@index([createdAt])
+  @@map("forum_replies")
+}
+
+// Reactions (likes, upvotes, etc.) for posts and replies
+model ForumReaction {
+  id        String   @id @default(uuid())
+  postId    String?
+  replyId   String?
+  userId    String
+  type      String   // e.g., "like", "upvote", "helpful"
+  createdAt DateTime @default(now())
+
+  post      ForumPost?  @relation(fields: [postId], references: [id], onDelete: Cascade)
+  reply     ForumReply? @relation(fields: [replyId], references: [id], onDelete: Cascade)
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, replyId, userId, type])
+  @@index([postId])
+  @@index([replyId])
+  @@index([userId])
+  @@map("forum_reactions")
 }
 

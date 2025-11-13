@@ -1,6 +1,8 @@
-## OpenX Academy
+## OpenXAI Hub
 
 Innovative Web3 Education Platform - Onchain certificates, live projects, and real rewards. Xnode/Nix compatible Next.js app.
+
+**Repository:** [OpenxAI-Network/openxai-hub](https://github.com/OpenxAI-Network/openxai-hub)
 
 ## Setup
 
@@ -65,12 +67,23 @@ Set Root Directory to `nextjs-app` in Vercel dashboard.
 
 ### Xnode
 
-1. Replace all instances of "open-circle" with your project name
-2. Build your Next.js app
-3. Push to GitHub
-4. Go to [Xnode Studio App Store](https://www.openmesh.network/xnode/app-store)
-5. Paste your GitHub URL and deploy
+1. Build your Next.js app
+2. Push to GitHub
+3. Go to [Xnode Studio App Store](https://www.openmesh.network/xnode/app-store)
+4. Paste your GitHub URL and deploy
 
-## One click deployment
+## Deployment
 
-[<img src="https://www.openmesh.network/xnode/deploy-on-xnode.svg" width=200 />](https://www.openmesh.network/xnode/deploy?advanced=eyJkYXRhIjp7Im5hbWUiOiJvcGVuLWNpcmNsZSIsImRlc2MiOiJDdXN0b20gQXBwIiwibml4TmFtZSI6Im9wZW4tY2lyY2xlIiwib3B0aW9ucyI6W3sibmFtZSI6ImVuYWJsZSIsImRlc2MiOiJFbmFibGUgdGhlIG5leHRqcyBhcHAiLCJuaXhOYW1lIjoiZW5hYmxlIiwidHlwZSI6ImJvb2xlYW4iLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJob3N0bmFtZSIsImRlc2MiOiJUaGUgaG9zdG5hbWUgdW5kZXIgd2hpY2ggdGhlIGFwcCBzaG91bGQgYmUgYWNjZXNzaWJsZS4iLCJuaXhOYW1lIjoiaG9zdG5hbWUiLCJ0eXBlIjoic3RyaW5nIiwidmFsdWUiOiIwLjAuMC4wIn0seyJuYW1lIjoicG9ydCIsImRlc2MiOiJUaGUgcG9ydCB1bmRlciB3aGljaCB0aGUgYXBwIHNob3VsZCBiZSBhY2Nlc3NpYmxlLiIsIm5peE5hbWUiOiJwb3J0IiwidHlwZSI6IjE2IGJpdCB1bnNpZ25lZCBpbnRlZ2VyOyBiZXR3ZWVuIDAgYW5kIDY1NTM1IChib3RoIGluY2x1c2l2ZSkiLCJ2YWx1ZSI6IjMwMDAifSx7Im5hbWUiOiJvcGVuRmlyZXdhbGwiLCJkZXNjIjoiV2hldGhlciB0byBvcGVuIHBvcnRzIGluIHRoZSBmaXJld2FsbCBmb3IgdGhpcyBhcHBsaWNhdGlvbi4iLCJuaXhOYW1lIjoib3BlbkZpcmV3YWxsIiwidHlwZSI6ImJvb2xlYW4iLCJ2YWx1ZSI6InRydWUifV0sInRhZ3MiOltdLCJmbGFrZXMiOlt7Im5hbWUiOiJvcGVuLWNpcmNsZS1mbGFrZSIsInVybCI6ImdpdGh1Yjpqb2huZm9yZmFyL29wZW4tY2lyY2xlIn1dLCJpZCI6Im9wZW4tY2lyY2xlIn0sInR5cGUiOiJ0ZW1wbGF0ZXMiLCJzZXJ2aWNlcyI6W3sibmFtZSI6Im9wZW4tY2lyY2xlIiwiZGVzYyI6IkN1c3RvbSBBcHAiLCJuaXhOYW1lIjoib3Blbi1jaXJjbGUiLCJvcHRpb25zIjpbeyJuYW1lIjoiZW5hYmxlIiwiZGVzYyI6IkVuYWJsZSB0aGUgbmV4dGpzIGFwcCIsIm5peE5hbWUiOiJlbmFibGUiLCJ0eXBlIjoiYm9vbGVhbiIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6Imhvc3RuYW1lIiwiZGVzYyI6IlRoZSBob3N0bmFtZSB1bmRlciB3aGljaCB0aGUgYXBwIHNob3VsZCBiZSBhY2Nlc3NpYmxlLiIsIm5peE5hbWUiOiJob3N0bmFtZSIsInR5cGUiOiJzdHJpbmciLCJ2YWx1ZSI6IjAuMC4wLjAifSx7Im5hbWUiOiJwb3J0IiwiZGVzYyI6IlRoZSBwb3J0IHVuZGVyIHdoaWNoIHRoZSBhcHAgc2hvdWxkIGJlIGFjY2Vzc2libGUuIiwibml4TmFtZSI6InBvcnQiLCJ0eXBlIjoiMTYgYml0IHVuc2lnbmVkIGludGVnZXI7IGJldHdlZW4gMCBhbmQgNjU1MzUgKGJvdGggaW5jbHVzaXZlKSIsInZhbHVlIjoiMzAwMCJ9LHsibmFtZSI6Im9wZW5GaXJld2FsbCIsImRlc2MiOiJXaGV0aGVyIHRvIG9wZW4gcG9ydHMgaW4gdGhlIGZpcmV3YWxsIGZvciB0aGlzIGFwcGxpY2F0aW9uLiIsIm5peE5hbWUiOiJvcGVuRmlyZXdhbGwiLCJ0eXBlIjoiYm9vbGVhbiIsInZhbHVlIjoidHJ1ZSJ9XSwidGFncyI6W10sImZsYWtlcyI6W3sibmFtZSI6Im9wZW4tY2lyY2xlLWZsYWtlIiwidXJsIjoiZ2l0aHViOmpvaG5mb3JmYXIvb3Blbi1jaXJjbGUifV19XX0=)
+### Vercel
+
+1. Connect your GitHub repository to Vercel
+2. Set Root Directory to `nextjs-app` in Vercel dashboard
+3. Configure environment variables from `.env.example`
+4. Deploy
+
+### Supabase
+
+1. Create a new Supabase project
+2. Run migrations: `npx prisma migrate deploy` (or use Supabase migrations)
+3. Configure environment variables with your Supabase connection string
+4. Link Supabase project to your Vercel deployment

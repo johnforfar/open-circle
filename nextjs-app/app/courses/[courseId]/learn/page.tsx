@@ -22,6 +22,9 @@ export default function CourseLearnPage() {
   const [currentModule, setCurrentModule] = useState(0);
   const [completedModules, setCompletedModules] = useState<number[]>([]);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, string>>({});
+  const [quizSubmitted, setQuizSubmitted] = useState(false);
+  const [quizScore, setQuizScore] = useState<number | null>(null);
+  const [quizError, setQuizError] = useState<string | null>(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
   const confettiTriggered = useRef(false);
@@ -83,11 +86,39 @@ export default function CourseLearnPage() {
   };
 
   const handleQuizSubmit = () => {
-    if (Object.keys(quizAnswers).length < 3) {
+    const requiredQuestions = [1, 2, 3];
+
+    if (requiredQuestions.some((question) => !quizAnswers[question])) {
+      setQuizError("Answer all questions before submitting.");
+      setQuizSubmitted(true);
+      setQuizScore(null);
       return;
     }
-    setQuizCompleted(true);
-    handleModuleComplete();
+
+    const correctAnswers: Record<number, string> = {
+      1: "You control your private keys",
+      2: "Reown",
+      3: "Your seed phrase",
+    };
+
+    const score = requiredQuestions.reduce((total, question) => {
+      return total + (quizAnswers[question] === correctAnswers[question] ? 1 : 0);
+    }, 0);
+
+    setQuizSubmitted(true);
+    setQuizScore(score);
+
+    if (score === requiredQuestions.length) {
+      setQuizError(null);
+      if (!quizCompleted) {
+        setQuizCompleted(true);
+        handleModuleComplete();
+      }
+    } else {
+      setQuizError("You need 100% to continue. Review the modules and try again.");
+      setQuizCompleted(false);
+      confettiTriggered.current = false;
+    }
   };
 
   const module = course.modules[currentModule];
@@ -198,6 +229,50 @@ export default function CourseLearnPage() {
                     </p>
                   </div>
 
+                  {quizSubmitted && (
+                    <div
+                      className={`rounded-xl border p-4 ${
+                        quizScore === 3
+                          ? "border-green-200 bg-green-50 dark:border-green-700 dark:bg-green-900/20"
+                          : "border-red-200 bg-red-50 dark:border-red-700 dark:bg-red-900/20"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <p
+                          className={`text-sm font-semibold ${
+                            quizScore === 3
+                              ? "text-green-700 dark:text-green-200"
+                              : "text-red-700 dark:text-red-200"
+                          }`}
+                        >
+                          Score: {quizScore ?? 0}/3
+                        </p>
+                        {quizScore !== 3 && (
+                          <button
+                            onClick={() => {
+                              setQuizSubmitted(false);
+                              setQuizScore(null);
+                              setQuizError(null);
+                            }}
+                            className="text-sm font-semibold text-blue-600 hover:text-blue-500"
+                          >
+                            Reset answers
+                          </button>
+                        )}
+                      </div>
+                      {quizError && (
+                        <p className="mt-2 text-sm text-red-600 dark:text-red-200">
+                          {quizError} Try again.
+                        </p>
+                      )}
+                      {quizScore === 3 && (
+                        <p className="mt-2 text-sm text-green-700 dark:text-green-200">
+                          Perfect score! You&apos;re ready to continue.
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   <div className="space-y-4">
                     <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4">
                       <p className="font-semibold mb-3">1. What is a non-custodial wallet?</p>
@@ -256,26 +331,84 @@ export default function CourseLearnPage() {
 
                   <Button
                     onClick={handleQuizSubmit}
-                    disabled={Object.keys(quizAnswers).length < 3}
-                    className="w-full rounded-xl bg-gray-900 hover:bg-gray-800 disabled:bg-gray-400"
+                    disabled={quizScore === 3}
+                    className="w-full rounded-xl bg-gray-900 hover:bg-gray-800 disabled:bg-green-600 disabled:text-white disabled:cursor-not-allowed"
                     size="lg"
                   >
-                    Complete Quiz
+                    {quizScore === 3 ? "Quiz Completed" : "Submit Quiz"}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
               ) : (
-                <div className="space-y-6">
-                  <div className="prose dark:prose-invert max-w-none">
-                    <h3 className="text-xl font-semibold mb-4">What You&apos;ll Learn</h3>
-                    <ul className="space-y-2">
-                      {module.topics.map((topic, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 dark:text-gray-300">{topic}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div className="space-y-8">
+                  {module.contentSections?.map((section: any, idx: number) => (
+                    <div
+                      key={idx}
+                      className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/40 p-6"
+                    >
+                      {section.heading && (
+                        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                          {section.heading}
+                        </h3>
+                      )}
+                      {section.body && (
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {section.body}
+                        </p>
+                      )}
+                      {section.callout && (
+                        <div className="mt-4 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 px-4 py-3 text-sm text-blue-900 dark:text-blue-200">
+                          {section.callout}
+                        </div>
+                      )}
+                      {section.bullets && Array.isArray(section.bullets) && (
+                        <ul className="mt-4 space-y-2">
+                          {section.bullets.map((item: string, bulletIdx: number) => (
+                            <li key={bulletIdx} className="flex items-start gap-2">
+                              <ArrowRight className="mt-1 h-4 w-4 flex-shrink-0 text-blue-500" />
+                              <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <span dangerouslySetInnerHTML={{ __html: item }} />
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {section.resources && Array.isArray(section.resources) && (
+                        <div className="mt-4 flex flex-wrap gap-3">
+                          {section.resources.map(
+                            (
+                              resource: { label: string; url: string },
+                              resourceIdx: number
+                            ) => (
+                              <a
+                                key={resourceIdx}
+                                href={resource.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors hover:border-blue-500 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-300"
+                              >
+                                {resource.label}
+                                <ArrowRight className="h-3.5 w-3.5" />
+                              </a>
+                            )
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+
+                  <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+                    <div className="prose dark:prose-invert max-w-none">
+                      <h3 className="text-xl font-semibold mb-4">What You&apos;ll Learn</h3>
+                      <ul className="space-y-2">
+                        {module.topics.map((topic: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700 dark:text-gray-300">{topic}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
                   <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
